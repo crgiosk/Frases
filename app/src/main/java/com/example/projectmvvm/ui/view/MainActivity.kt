@@ -9,7 +9,9 @@ import androidx.activity.viewModels
 import com.example.projectmvvm.core.UIState
 import com.example.projectmvvm.databinding.ActivityMainBinding
 import com.example.projectmvvm.ui.viewmodel.QuotViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val quotViewModel: QuotViewModel by viewModels()

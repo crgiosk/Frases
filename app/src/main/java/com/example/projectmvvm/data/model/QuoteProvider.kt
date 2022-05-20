@@ -1,8 +1,9 @@
 package com.example.projectmvvm.data.model
 
-class QuoteProvider {
+import javax.inject.Inject
+import javax.inject.Singleton
 
-    companion object{
-        var quoteList = listOf<Quote>()
-    }
+@Singleton
+class QuoteProvider @Inject constructor() {
+    var quoteList = listOf<Quote>()
 }
