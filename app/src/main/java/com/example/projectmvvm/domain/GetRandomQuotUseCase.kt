@@ -1,14 +1,13 @@
 package com.example.projectmvvm.domain
 
-import com.example.projectmvvm.data.model.Quote
-import com.example.projectmvvm.data.model.QuoteProvider
+import com.example.projectmvvm.data.QuoteRepository
 import javax.inject.Inject
 
 class GetRandomQuotUseCase @Inject constructor(
-    private val quoteProvider: QuoteProvider
+    private val repository: QuoteRepository
 ) {
-    operator fun invoke(): Quote? {
-        with(quoteProvider.quoteList) {
+    suspend operator fun invoke(): QuotBind? {
+        with(repository.getAllQuoteFromDatabase()) {
             return if (this.isNotEmpty()) {
                 this[this.indices.random()]
             } else {

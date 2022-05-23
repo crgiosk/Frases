@@ -1,11 +1,12 @@
 package com.example.projectmvvm.data.model
 
 import androidx.annotation.Keep
+import com.example.projectmvvm.core.QuotInterface
 import com.google.gson.annotations.SerializedName
 @Keep
-data class Quote(
+data class QuoteApiResponse(
     @SerializedName("quote")
-    val quote: String,
+    override val quote: String = String(),
     @SerializedName("author")
-    val author: String
-)
+    override val author: String = String()
+): QuotInterface
