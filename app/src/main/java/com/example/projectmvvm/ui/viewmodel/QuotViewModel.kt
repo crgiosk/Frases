@@ -38,7 +38,7 @@ class QuotViewModel @Inject constructor(
     }
 
     fun onCreate() {
-        getAllQuotsMutableLiveData.postValue(UIState.OnLoading)
+        //getAllQuotsMutableLiveData.postValue(UIState.OnLoading)
         viewModelScope.launch {
             val result = getQuotUseCase()
             if (result.isNotEmpty()) {
